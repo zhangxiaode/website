@@ -23,12 +23,12 @@ export default {
   components:{Loading},
   created(){
     // 测试ajax
-    ajax.get('/borrow/ordersInfo/getOrderList',{a:1})
+    ajax.get('/borrow/ordersInfo/getOrderList',{})
     .then((res) => {
-      console.log(res);
+      // console.log(res);
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
     })
   },
   methods:{

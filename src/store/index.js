@@ -5,8 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    loading:false,
-    a: 1
+    loading:false
   },
   mutations: {
     showLoading(state){
@@ -14,14 +13,11 @@ export default new Vuex.Store({
     },
     hideLoading(state){
       state.loading=false;
-    },
-    add(state){
-      state.a++;
     }
   },
   action: {
-    reduce(context){
-      context.commit("add");
-    }
+    // 测试用
+    // reduce(context){
+    // }
   }
 });

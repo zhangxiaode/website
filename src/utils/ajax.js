@@ -15,6 +15,7 @@ instance.interceptors.request.use((config) => {
     return config
 }, function (error) {
     // 对请求错误做些什么
+    store.commit("hideLoading");
     return Promise.reject(error)
 });
 // 添加响应拦截器
@@ -25,6 +26,7 @@ instance.interceptors.response.use((response) => {
     return response
 }, function (error) {
     // 对响应错误做点什么
+    store.commit("hideLoading");
     return Promise.reject(error)
 });
 function initParams(params){

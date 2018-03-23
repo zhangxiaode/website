@@ -2,6 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
+    <Transition></Transition>
     <Loading v-if="showLoading"></Loading> 
   </div>
 </template>

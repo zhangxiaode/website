@@ -1,15 +1,16 @@
 import Vue from 'vue'
-let MessageConstructor = Vue.extend(require("./message.vue"));
+import MessagePage from "./message"
+let MessageConstructor = Vue.extend(MessagePage);
 let instance;
-var Message = function(options){
+const Message = function(options){
   instance=new MessageConstructor({data: options});
-  console.log(instance);
-  // instance.vm=instance.$mount();
+  document.body.appendChild(instance.$mount().$el);
+  // instance.id="id123";
+  // instance.vm = instance.$mount("#app");
   // document.body.appendChild(instance.vm.$el);
   // instance.vm.visible = true;
   // instance.dom = instance.vm.$el;
-  console.log(options);
-  return instance.vm;
+  return instance;
 };
 ['success', 'warning', 'info', 'error'].forEach(type => {
   Message[type] = options => {
@@ -22,4 +23,10 @@ var Message = function(options){
     return Message(options);
   };
 });
+Message.close=function(){
+
+}
+Message.closeAll=function(){
+  
+}
 export default Message

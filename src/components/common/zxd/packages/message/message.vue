@@ -1,19 +1,35 @@
 <template>
-  <div class="message">
-    aaaaaaaaaaaaaaaaaaaaa
-  </div>
+  <transition>  
+    <div v-show="showMessage" :class="['zxd-message',type ? `zxd-message-${ type }`:'zxd-message-info']">
+      {{ message }}
+    </div>
+  </transition>
 </template>
 
 <script>
 export default {
-  name: 'Message',
+  name: 'Zxd-message',
   data () {
     return {
+      message:'',
+      type:'info',
+      duration:3000,
+      showMessage:true
+    }
+  },
+  mounted(){
+    setTimeout(()=>{
+      this.showMessage=false;
+      // setTimeout(()=>{
+      //   this.$el.parentNode.removeChild(this.$el);
+      // },3000)
+    },this.duration)
+  },
+  methods:{
+    switch(){
+
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" scoped>
-</style>

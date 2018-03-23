@@ -13,6 +13,7 @@ import zxd from './components/common/zxd/index' // 加载公共类组件
 import './components/common/zxd/common.less' // 加载公共类组件样式
 
 Vue.config.productionTip = false
+Vue.use(zxd)
 
 /* eslint-disable no-new */
 new Vue({
@@ -21,7 +22,7 @@ new Vue({
   store,
   components: { App },
   mounted(){
-    this.$message.error("123");
+    this.$message.info("123");
   }, 
   template: '<App/>'
 })

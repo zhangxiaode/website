@@ -1,4 +1,5 @@
 import Message from "./packages/message/index"
+import Loading from "./packages/loading/index"
 import "./common.less"
 
 const components=[
@@ -26,6 +27,7 @@ const install = function(Vue, opts = {}) {
 
   // 4. 添加实例方法
   Vue.prototype.$message = Message;
+  Vue.prototype.$loading = Loading;
   
   //组件注册
   components.map(component => {
@@ -37,5 +39,6 @@ const install = function(Vue, opts = {}) {
 
 export default {
   install,
-  Message
+  Message,
+  Loading
 } 

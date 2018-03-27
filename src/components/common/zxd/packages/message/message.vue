@@ -1,5 +1,5 @@
 <template>
-  <transition>  
+  <transition name="zxd-fade">  
     <div v-show="showMessage" :class="['zxd-message',type ? `zxd-message-${ type }`:'zxd-message-info']">
       {{ message }}
     </div>
@@ -20,9 +20,9 @@ export default {
   mounted(){
     setTimeout(()=>{
       this.showMessage=false;
-      // setTimeout(()=>{
-      //   this.$el.parentNode.removeChild(this.$el);
-      // },3000)
+      setTimeout(()=>{
+        this.$el.parentNode.removeChild(this.$el);
+      },500)
     },this.duration)
   },
   methods:{

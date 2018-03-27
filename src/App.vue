@@ -4,6 +4,7 @@
     <router-view/>
     <Transition></Transition>
     <Loading v-if="showLoading"></Loading> 
+    <a href="javascript:;" @click="handleClick">点击</a>
   </div>
 </template>
 
@@ -33,18 +34,16 @@ export default {
     })
   },
   methods:{
-
+    handleClick(){
+      this.$message.error("123");
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

@@ -23,10 +23,10 @@ const Message = function(options){
     return Message(options);
   };
 });
-Message.close=function(){
+// Message.close=function(){
 
-}
-Message.closeAll=function(){
+// }
+// Message.closeAll=function(){
   
-}
+// }
 export default Message

@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import MessagePage from "./message"
-let MessageConstructor = Vue.extend(MessagePage);
+import loadingPage from "./loading"
+let MessageConstructor = Vue.extend(loadingPage);
 let instance;
-const Message = function(options){
+const Loading = function(options){
   instance=new MessageConstructor({data: options});
   document.body.appendChild(instance.$mount().$el);
   // instance.id="id123";
@@ -13,20 +13,20 @@ const Message = function(options){
   return instance;
 };
 ['success', 'warning', 'info', 'error'].forEach(type => {
-  Message[type] = options => {
+  Loading[type] = options => {
     if (typeof options === 'string') {
       options = {
-        message: options
+        loading: options
       };
     }
     options.type = type;
-    return Message(options);
+    return Loading(options);
   };
 });
-Message.close=function(){
+// Loading.close=function(){
 
-}
-Message.closeAll=function(){
+// }
+// Loading.closeAll=function(){
   
-}
-export default Message
+// }
+export default Loading

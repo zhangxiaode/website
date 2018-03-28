@@ -14,7 +14,6 @@ import './components/common/zxd/common.less' // 加载公共类组件样式
 
 Vue.config.productionTip = false
 Vue.use(zxd)
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

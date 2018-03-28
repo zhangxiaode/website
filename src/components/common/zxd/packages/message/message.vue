@@ -26,9 +26,6 @@ export default {
     },this.duration)
   },
   methods:{
-    switch(){
-
-    }
   }
 }
 </script>

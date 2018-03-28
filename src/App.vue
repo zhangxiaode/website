@@ -15,6 +15,7 @@ export default {
   name: 'App',
   data(){
     return {
+      a: 1
     }
   },
   computed:{
@@ -35,6 +36,7 @@ export default {
   },
   methods:{
     handleClick(){
+      this.a++;
       this.$message.error("123");
     }
   }
